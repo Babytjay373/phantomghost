@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phantom Ghost Productions — Music Videos, Lyric Videos & Visuals</title>
+<meta name="description" content="Lyric videos, visualisers and music video edits for independent artists. Delivered in 48 hours. Accra, Ghana.">
+<meta property="og:title" content="Phantom Ghost Productions">
+<meta property="og:description" content="Music videos and lyric videos for independent artists. 48-hour delivery.">
+<meta property="og:image" content="assets/og.png">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
+<style>
+  :root{
+    --ink:#07080A; --ink2:#0E1014; --bone:#EEECE7; --dim:#8A8A85;
+    --line:rgba(238,236,231,.14); --spect:#B0D0E0;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink); color:var(--bone);
+    font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+    -webkit-font-smoothing:antialiased; line-height:1.55;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+
+  /* ── nav ── */
+  nav{position:sticky;top:0;z-index:50;background:rgba(7,8,10,.86);
+      backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .brand{display:flex;align-items:center;gap:14px}
+  .brand img{width:34px;height:34px}
+  .brand span{font-family:Georgia,'Times New Roman',serif;font-size:19px;letter-spacing:.22em}
+  .nav-links{display:flex;gap:34px;font-size:13px;letter-spacing:.13em;text-transform:uppercase;color:var(--dim)}
+  .nav-links a:hover{color:var(--bone)}
+  @media(max-width:780px){.nav-links{display:none}}
+
+  /* ── hero ── */
+  header{padding:130px 0 110px;position:relative;overflow:hidden}
+  header::after{
+    content:"";position:absolute;left:50%;top:-140px;width:520px;height:520px;
+    transform:translateX(-50%);pointer-events:none;
+    background:radial-gradient(circle,rgba(176,208,224,.11),transparent 62%);
+  }
+  h1{
+    font-family:Georgia,'Times New Roman',serif;font-weight:400;
+    font-size:clamp(42px,7.2vw,92px);line-height:1.02;letter-spacing:-.015em;
+    position:relative;z-index:1;
+  }
+  h1 em{font-style:italic;color:var(--spect)}
+  .lede{margin-top:30px;max-width:600px;font-size:19px;color:#B6B4AE;position:relative;z-index:1}
+  .cta-row{margin-top:46px;display:flex;gap:14px;flex-wrap:wrap;position:relative;z-index:1}
+  .btn{display:inline-block;padding:16px 32px;border-radius:2px;font-size:13px;
+       letter-spacing:.14em;text-transform:uppercase;transition:.2s}
+  .btn-solid{background:var(--bone);color:var(--ink);font-weight:600}
+  .btn-solid:hover{background:#fff;transform:translateY(-1px)}
+  .btn-ghost{border:1px solid var(--line);color:var(--bone)}
+  .btn-ghost:hover{border-color:var(--bone)}
+
+  /* ── sections ── */
+  section{padding:96px 0;border-top:1px solid var(--line)}
+  .eyebrow{font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--dim);margin-bottom:18px}
+  h2{font-family:Georgia,serif;font-weight:400;font-size:clamp(28px,4vw,44px);line-height:1.12;margin-bottom:16px}
+  .sub{color:#B6B4AE;max-width:560px;margin-bottom:52px}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;
+        background:var(--line);border:1px solid var(--line)}
+  .card{background:var(--ink2);padding:34px 30px}
+  .card .num{font-family:Georgia,serif;font-size:13px;color:var(--spect);letter-spacing:.16em;margin-bottom:16px}
+  .card h3{font-size:19px;font-weight:600;margin-bottom:12px;letter-spacing:.01em}
+  .card p{font-size:14.5px;color:#9E9C96;line-height:1.65}
+  .card .tag{margin-top:18px;font-size:12px;letter-spacing:.1em;color:var(--dim);text-transform:uppercase}
+
+  /* ── work ── */
+  .work{display:flex;gap:40px;flex-wrap:wrap;align-items:flex-start}
+  .work figure{border:1px solid var(--line);background:var(--ink2);max-width:330px}
+  .work video{width:100%;display:block;background:#000;max-height:586px;object-fit:cover}
+  .work .note{flex:1;min-width:250px;font-size:15px;color:#9E9C96;line-height:1.75}
+  .work .note strong{color:var(--bone);font-weight:600;display:block;margin-bottom:10px;font-size:16px}
+  .work .note ul{list-style:none;margin-top:18px}
+  .work .note li{padding:7px 0;border-top:1px solid rgba(238,236,231,.07);font-size:14px}
+  .work .note li::before{content:"—";color:var(--spect);margin-right:10px}
+  .work figcaption{padding:16px 18px;font-size:13px;color:var(--dim);
+                   display:flex;justify-content:space-between;letter-spacing:.06em}
+
+  /* ── pricing ── */
+  .price{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+  .tier{border:1px solid var(--line);padding:36px 30px;background:var(--ink2);position:relative}
+  .tier.feat{border-color:rgba(176,208,224,.45)}
+  .tier .badge{position:absolute;top:-10px;left:30px;background:var(--spect);color:var(--ink);
+               font-size:10px;letter-spacing:.16em;padding:4px 10px;text-transform:uppercase;font-weight:700}
+  .tier .name{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:20px}
+  .tier .amt{font-family:Georgia,serif;font-size:42px;line-height:1}
+  .tier .amt small{font-size:14px;color:var(--dim);letter-spacing:.04em}
+  .tier ul{list-style:none;margin-top:26px;font-size:14px;color:#A8A6A0}
+  .tier li{padding:9px 0;border-top:1px solid rgba(238,236,231,.07)}
+  .tier li::before{content:"—";color:var(--spect);margin-right:11px}
+
+  /* ── contact ── */
+  .contact{text-align:center;padding:120px 0}
+  .contact h2{margin-bottom:22px}
+  .contact p{color:#B6B4AE;max-width:520px;margin:0 auto 40px}
+  .contact .mail{font-family:Georgia,serif;font-size:clamp(20px,3vw,32px);
+                 border-bottom:1px solid var(--line);padding-bottom:6px;letter-spacing:.02em}
+  .contact .mail:hover{border-color:var(--spect);color:var(--spect)}
+
+  footer{padding:44px 0;border-top:1px solid var(--line);font-size:12.5px;color:var(--dim);
+         display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;letter-spacing:.05em}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-in">
+    <a class="brand" href="#top">
+      <img src="assets/mark.png" alt="">
+      <span>PHANTOM GHOST</span>
+    </a>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="wrap">
+    <h1>Your track deserves<br><em>a visual</em> that matches it.</h1>
+    <p class="lede">Lyric videos, visualisers and music video edits for independent artists.
+       Delivered in 48 hours, at a price you can actually afford.</p>
+    <div class="cta-row">
+      <a class="btn btn-solid" href="#pricing">See pricing</a>
+      <a class="btn btn-ghost" href="#work">Watch the work</a>
+    </div>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <p class="eyebrow">Selected work</p>
+    <h2>Beat-reactive lyric video</h2>
+    <p class="sub">Built from your audio file and your lyrics. The background moves with
+       the track — every kick, every drop.</p>
+    <div class="work">
+      <figure>
+        <video src="assets/demo-lyric.mp4" poster="assets/poster.jpg" autoplay muted loop playsinline preload="metadata"></video>
+        <figcaption><span>DEMO — LYRIC VIDEO</span><span>1080 × 1920</span></figcaption>
+      </figure>
+      <div class="note">
+        <strong>What you're watching</strong>
+        This was generated from an audio file and a text file of lyrics. The background
+        reads the track's energy and moves with it — no two songs get the same visual.
+        <ul>
+          <li>Word-level lyric sync</li>
+          <li>Background reacts to kicks and drops</li>
+          <li>Vertical and widescreen from one render</li>
+          <li>Your lyrics, your colours</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <p class="eyebrow">What we make</p>
+    <h2>Three things, done properly</h2>
+    <p class="sub">We do a narrow set of work and we do it fast. No scope creep, no surprise invoices.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="num">01</div>
+        <h3>Lyric Videos</h3>
+        <p>Your lyrics, synced to the vocal, over a moving background that reacts to the beat.
+           Ready for YouTube, Reels and TikTok.</p>
+        <p class="tag">48 hours · vertical + widescreen</p>
+      </div>
+      <div class="card">
+        <div class="num">02</div>
+        <h3>Visualisers</h3>
+        <p>Looping abstract visuals for Spotify Canvas, YouTube and socials. No lyrics —
+           just atmosphere and motion that fits the record.</p>
+        <p class="tag">24 hours · loopable</p>
+      </div>
+      <div class="card">
+        <div class="num">03</div>
+        <h3>Video Edits</h3>
+        <p>You shot the footage — we cut it. Hooks, pacing, captions, colour. Delivered ready to upload.</p>
+        <p class="tag">72 hours · up to 3 minutes</p>
+      </div>
+      <div class="card">
+        <div class="num">04</div>
+        <h3>Release Package</h3>
+        <p>Lyric video plus cover art plus a set of vertical clips cut for Reels and TikTok,
+           all from one session.</p>
+        <p class="tag">Best value · 5 days</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <p class="eyebrow">Pricing</p>
+    <h2>Clear rates, no negotiation games</h2>
+    <p class="sub">50% up front, 50% on delivery. Two rounds of changes included in every tier.</p>
+    <div class="price">
+      <div class="tier">
+        <div class="name">Visualiser</div>
+        <div class="amt">$60</div>
+        <ul>
+          <li>Looping motion visual</li>
+          <li>Fits your track exactly</li>
+          <li>1080p vertical + wide</li>
+          <li>24-hour delivery</li>
+        </ul>
+      </div>
+      <div class="tier feat">
+        <div class="badge">Most popular</div>
+        <div class="name">Lyric Video</div>
+        <div class="amt">$120</div>
+        <ul>
+          <li>Word-synced lyrics</li>
+          <li>Beat-reactive background</li>
+          <li>1080p vertical + widescreen</li>
+          <li>2 background styles to choose</li>
+          <li>48-hour delivery</li>
+        </ul>
+      </div>
+      <div class="tier">
+        <div class="name">Release Package</div>
+        <div class="amt">$260</div>
+        <ul>
+          <li>Lyric video</li>
+          <li>Cover art (3 concepts)</li>
+          <li>6 vertical clips for Reels</li>
+          <li>Captions burned in</li>
+          <li>5-day delivery</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <p class="eyebrow">Start a project</p>
+    <h2>Send the track. We'll send it back with a picture.</h2>
+    <p>Tell me the song, the deadline and what you want it to feel like. If I can't do it,
+       I'll say so — and point you somewhere better.</p>
+    <a class="mail" href="mailto:ixtjay36@gmail.com?subject=Music%20video%20enquiry">ixtjay36@gmail.com</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;width:100%">
+    <span>PHANTOM GHOST PRODUCTIONS — ACCRA, GHANA</span>
+    <span>© <span id="y"></span> All rights reserved</span>
+  </div>
+</footer>
+
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
