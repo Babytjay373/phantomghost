@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://babytjay373.github.io/phantomghost/sitemap.xml
