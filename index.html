@@ -35,21 +35,24 @@
   .nav-links{display:flex;gap:34px;font-size:13px;letter-spacing:.13em;text-transform:uppercase;color:var(--dim)}
   .nav-links a:hover{color:var(--bone)}
   @media(max-width:780px){.nav-links{display:none}}
+  @media(max-width:980px){h1{max-width:none}}
 
   /* ── hero ── */
-  header{padding:130px 0 110px;position:relative;overflow:hidden}
+  header{padding:150px 0 130px;position:relative;overflow:hidden;min-height:640px}
+  #hero3d{position:absolute;inset:0;z-index:0}
   header::after{
     content:"";position:absolute;left:50%;top:-140px;width:520px;height:520px;
     transform:translateX(-50%);pointer-events:none;
     background:radial-gradient(circle,rgba(176,208,224,.11),transparent 62%);
   }
   h1{
+    position:relative;z-index:1;
     font-family:Georgia,'Times New Roman',serif;font-weight:400;
-    font-size:clamp(42px,7.2vw,92px);line-height:1.02;letter-spacing:-.015em;
+    font-size:clamp(42px,6.4vw,86px);line-height:1.03;letter-spacing:-.015em;max-width:15ch;
     position:relative;z-index:1;
   }
   h1 em{font-style:italic;color:var(--spect)}
-  .lede{margin-top:30px;max-width:600px;font-size:19px;color:#B6B4AE;position:relative;z-index:1}
+  .lede{margin-top:30px;position:relative;z-index:1;max-width:600px;font-size:19px;color:#B6B4AE;position:relative;z-index:1}
   .cta-row{margin-top:46px;display:flex;gap:14px;flex-wrap:wrap;position:relative;z-index:1}
   .btn{display:inline-block;padding:16px 32px;border-radius:2px;font-size:13px;
        letter-spacing:.14em;text-transform:uppercase;transition:.2s}
@@ -193,6 +196,7 @@
 </nav>
 
 <header id="top">
+  <div id="hero3d"></div>
   <div class="wrap">
     <h1>Your track deserves<br><em>a visual</em> that matches it.</h1>
     <p class="lede">Lyric videos, visualisers and music video edits for independent artists.
@@ -236,27 +240,27 @@
     <h2>Three things, done properly</h2>
     <p class="sub">We do a narrow set of work and we do it fast. No scope creep, no surprise invoices.</p>
     <div class="grid">
-      <div class="card">
+      <div class="card" data-delay="0">
         <div class="num">01</div>
         <h3>Lyric Videos</h3>
         <p>Your lyrics, synced to the vocal, over a moving background that reacts to the beat.
            Ready for YouTube, Reels and TikTok.</p>
         <p class="tag">48 hours · vertical + widescreen</p>
       </div>
-      <div class="card">
+      <div class="card" data-delay="0">
         <div class="num">02</div>
         <h3>Visualisers</h3>
         <p>Looping abstract visuals for Spotify Canvas, YouTube and socials. No lyrics —
            just atmosphere and motion that fits the record.</p>
         <p class="tag">24 hours · loopable</p>
       </div>
-      <div class="card">
+      <div class="card" data-delay="0">
         <div class="num">03</div>
         <h3>Video Edits</h3>
         <p>You shot the footage — we cut it. Hooks, pacing, captions, colour. Delivered ready to upload.</p>
         <p class="tag">72 hours · up to 3 minutes</p>
       </div>
-      <div class="card">
+      <div class="card" data-delay="0">
         <div class="num">04</div>
         <h3>Release Package</h3>
         <p>Lyric video plus cover art plus a set of vertical clips cut for Reels and TikTok,
@@ -329,5 +333,6 @@
 
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 <script src="assets/chat.js" defer></script>
+<script src="assets/motion.js" defer></script>
 </body>
 </html>
