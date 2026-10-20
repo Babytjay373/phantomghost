@@ -84,6 +84,12 @@
   .work .note ul{list-style:none;margin-top:18px}
   .work .note li{padding:7px 0;border-top:1px solid rgba(238,236,231,.07);font-size:14px}
   .work .note li::before{content:"—";color:var(--spect);margin-right:10px}
+  .stage{position:relative;width:100%;max-width:420px;aspect-ratio:4/5;border:1px solid var(--line);
+         background:radial-gradient(circle at 50% 42%,#11151b,#07080a 70%);overflow:hidden}
+  .stage canvas{border-radius:0}
+  .stage .live{position:absolute;top:12px;left:12px;z-index:2;font-size:10px;letter-spacing:.2em;
+         padding:4px 9px;background:var(--spect);color:#07080A;font-weight:700;border-radius:2px}
+  .stage figcaption{position:absolute;left:0;right:0;bottom:0;z-index:2}
   .work figcaption{padding:16px 18px;font-size:13px;color:var(--dim);
                    display:flex;justify-content:space-between;letter-spacing:.06em}
 
@@ -211,23 +217,24 @@
 <section id="work">
   <div class="wrap">
     <p class="eyebrow">Selected work</p>
-    <h2>Beat-reactive lyric video</h2>
-    <p class="sub">Built from your audio file and your lyrics. The background moves with
-       the track — every kick, every drop.</p>
+    <h2>Built in the browser, rendered in real 3D</h2>
+    <p class="sub">This is a live 3D scene, not a video file. Everything on this site that moves is
+       generated in code — which is why it loads instantly and costs nothing to host.</p>
     <div class="work">
-      <figure>
-        <video src="assets/demo-lyric.mp4" poster="assets/poster.jpg" autoplay muted loop playsinline preload="metadata"></video>
-        <figcaption><span>DEMO — LYRIC VIDEO</span><span>1080 × 1920</span></figcaption>
+      <figure class="stage" id="stickman-stage" data-stickman data-speed="1">
+        <div class="live">LIVE 3D</div>
+        <figcaption><span>REAL-TIME 3D</span><span>CANVAS · NO LIBRARY</span></figcaption>
       </figure>
       <div class="note">
         <strong>What you're watching</strong>
-        This was generated from an audio file and a text file of lyrics. The background
-        reads the track's energy and moves with it — no two songs get the same visual.
+        A 3D skeleton rendered live in your browser — real joint coordinates projected
+        through a perspective camera, walking on a procedural cycle. No video file,
+        no Three.js, no plugins. It runs at 60fps and weighs 8&nbsp;KB.
         <ul>
-          <li>Word-level lyric sync</li>
-          <li>Background reacts to kicks and drops</li>
-          <li>Vertical and widescreen from one render</li>
-          <li>Your lyrics, your colours</li>
+          <li>True 3D — depth-sorted bones, perspective projection</li>
+          <li>Procedural walk cycle, not keyframes</li>
+          <li>Runs on any phone, no download</li>
+          <li>Same technique used for motion graphics in your videos</li>
         </ul>
       </div>
     </div>
@@ -334,5 +341,6 @@
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 <script src="assets/chat.js" defer></script>
 <script src="assets/motion.js" defer></script>
+<script src="assets/stickman.js" defer></script>
 </body>
 </html>
