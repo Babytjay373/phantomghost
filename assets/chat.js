@@ -131,7 +131,7 @@
     if (l.includes("see the work")) {
       const el = document.getElementById("work");
       if (el) el.scrollIntoView({ behavior: "smooth" });
-      return { type: "reply", reply: "Scrolled you to the demo — it's the vertical video just above." };
+      return { type: "reply", reply: "Scrolled you to the demo — it's the vertical lyric video in Selected Work." };
     }
     if (l.includes("start a project")) return { type: "email" };
     const hit = match(label);

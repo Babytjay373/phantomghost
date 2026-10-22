@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://babytjay373.github.io/phantomghost/sitemap.xml
+Sitemap: https://phantomghost.online/sitemap.xml

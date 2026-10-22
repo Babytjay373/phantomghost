@@ -61,9 +61,10 @@
     function frame() {
       t += REDUCE ? 0 : 1;
       const wide = W > 880;
-      const cx = wide ? W * 0.755 : W / 2;
-      const cy = wide ? H * 0.50 : H * 0.46;
-      const R = Math.min(W, H) * (wide ? 0.285 : 0.335);
+      // on narrow screens the ring sits in its own band below the copy (header has extra bottom padding)
+      const cx = wide ? W * (W < 1200 ? 0.8 : 0.755) : W / 2;
+      const cy = wide ? H * 0.50 : H - 120;
+      const R = wide ? Math.min(W, H) * 0.285 : Math.min(W * 0.36, 150);
       const focal = R * 2.6;
 
       ctx.clearRect(0, 0, W, H);
@@ -167,7 +168,7 @@
   (function reveals() {
     if (REDUCE) return;
     const targets = document.querySelectorAll(
-      "section h2, section .sub, section .eyebrow, .card, .tier, .work figure, .work .note, .contact h2, .contact p, .contact .mail"
+      "section h2, section .sub, section .eyebrow, .card, .tier, .work figure, .work .note, .lab, .step, .pay-note, .contact h2, .contact p, .contact .cta-row, .contact .mail"
     );
     targets.forEach(el => {
       el.style.opacity = "0";
