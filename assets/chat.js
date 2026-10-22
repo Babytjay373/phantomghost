@@ -66,7 +66,7 @@
     {
       id: "who",
       keys: ["who are you", "who is", "about", "studio", "where", "based", "location", "accra", "ghana"],
-      reply: `<b>${BRAND}</b> is a video studio in Accra, Ghana. We make lyric videos, visualisers and edits for independent artists.\n\nSmall on purpose — one person, direct communication, no account managers. You message me, I answer.`,
+      reply: `<b>${BRAND}</b> is an animation and AI production studio in Accra, Ghana. We make 3D and 2D animation, AI productions, live motion graphics, and lyric videos, visualisers and edits for artists.\n\nSmall on purpose — one person, direct communication, no account managers. You message me, I answer.`,
       chips: ["Pricing", "See the work"],
     },
     {
@@ -86,6 +86,12 @@
       keys: ["human", "person", "talk to", "call", "whatsapp", "phone", "contact", "email", "speak"],
       reply: `Of course — email me directly:\n\n<b>${EMAIL}</b>\n\nOr tap the button below and it opens a draft with the subject already filled in. I reply within a few hours, Ghana time.`,
       chips: ["Email me", "Pricing"],
+    },
+    {
+      id: "animation",
+      keys: ["3d", "2d", "animation", "animate", "animated", " ai ", "motion graphic", "motion graphics", "explainer", "character", "logo", "product", "cartoon", "render"],
+      reply: "Yes, we do <b>3D animation</b>, <b>2D animation</b>, <b>AI productions</b> and <b>live motion graphics</b>, not just music visuals.\n\nThose are priced per project. Book a free 15-minute call and you'll get a quote and timeline.",
+      chips: ["Book a call", "Pricing", "Email me"],
     },
     {
       id: "hello",
@@ -134,6 +140,11 @@
       return { type: "reply", reply: "Scrolled you to the demo — it's the vertical lyric video in Selected Work." };
     }
     if (l.includes("start a project")) return { type: "email" };
+    if (l.includes("book a call")) {
+      const el = document.getElementById("book");
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+      return { type: "reply", reply: "Scrolled you to the booking form: pick a date and time and it opens an email with everything filled in." };
+    }
     const hit = match(label);
     return { type: "reply", reply: hit ? hit.reply : FALLBACK.reply, chips: hit ? hit.chips : FALLBACK.chips };
   }

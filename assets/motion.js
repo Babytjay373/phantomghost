@@ -12,7 +12,7 @@
   /* ───────────────────────────── 1. 3D HERO RING ─────────────────────── */
   (function hero3D() {
     const host = document.getElementById("hero3d");
-    if (!host) return;
+    if (!host || window.PG_HERO_GL) return; // live WebGL hero (hero-gl.js) took over
 
     const cv = document.createElement("canvas");
     cv.style.cssText = "position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none";
@@ -168,7 +168,7 @@
   (function reveals() {
     if (REDUCE) return;
     const targets = document.querySelectorAll(
-      "section h2, section .sub, section .eyebrow, .card, .tier, .work figure, .work .note, .lab, .step, .pay-note, .contact h2, .contact p, .contact .cta-row, .contact .mail"
+      "section h2, section .sub, section .eyebrow, .card, .tier, .work figure, .work .note, .lab, .step, .pay-note, .pal-row, .player, .canvas-phone, .tile, .live-tile, .cover, .book-info, form.booking, .contact h2, .contact p, .contact .cta-row, .contact .mail"
     );
     targets.forEach(el => {
       el.style.opacity = "0";
